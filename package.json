@@ -1,0 +1,34 @@
+{
+  "name": "episode-1",
+  "version": "1.0.0",
+  "description": "This is episdoe 1/2 of namaste react",
+  "scripts": {
+    "test": "jest",
+    "start": "rm -rf .parcel-cache && parcel",
+    "build": "rm -rf .parcel-cache && parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sahitya1707/namaste-react-ep-1.git"
+  },
+  "keywords": [
+    "namaste-react"
+  ],
+  "author": "Sahitya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sahitya1707/namaste-react-ep-1/issues"
+  },
+  "homepage": "https://github.com/Sahitya1707/namaste-react-ep-1#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserList": [
+    "last 2 version"
+  ]
+}
