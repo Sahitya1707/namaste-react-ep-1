@@ -4,8 +4,8 @@
   "description": "This is episdoe 1/2 of namaste react",
   "scripts": {
     "test": "jest",
-    "start": "rm -rf .parcel-cache && parcel",
-    "build": "rm -rf .parcel-cache && parcel build"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
