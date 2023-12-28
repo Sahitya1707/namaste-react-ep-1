@@ -24,7 +24,7 @@
   padding: 10px;
 }
 .res-card {
-  width: 200px;
+  width: 300px;
   /* height: 300px; */
 
   padding: 2px;
@@ -40,4 +40,5 @@
 }
 .res-container {
   display: flex;
+  flex-wrap: wrap;
 }
