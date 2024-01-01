@@ -16,3 +16,38 @@
 - Error Handling
 - HTTPS
 - Tree Shaking - Remove unused code s
+
+#Food Ordering app layour
+/\*
+
+- Header
+  - Logo
+  - Nav Items
+
+\*Body
+
+- Search
+- CardContainer
+  - Cards
+    Img
+    Name of Res, Star Rating, Cusine, Delivery time
+
+\*Footer
+
+- CopyRight
+- Links
+- Address
+- Contact
+
+\*/
+
+Two types of export/import
+
+- Default (export default <component name>)
+- Named Export Import (export const Component)
+
+#React hook
+(Normal JS uitility function)
+
+- useState() - Superpowerful state variable in react
+- useEffect()
