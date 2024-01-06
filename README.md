@@ -51,3 +51,9 @@ Two types of export/import
 
 - useState() - Superpowerful state variable in react
 - useEffect()
+
+- whenever state variables update, react triggers a reconcialiation cycle (re-renders the component)
+
+- during the re rendering cycle react is finding the difference between older virtual dom and newer virtual dom.
+
+- virtual dom is object representation of the real dom.

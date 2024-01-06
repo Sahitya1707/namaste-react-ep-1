@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
-import { BeatLoader } from "react-spinners";
+
 import Shimmer from "./Shimmer";
 // let filterDatas = resObj;
 const Body = () => {
+  // const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filterDatas, setFilterDatas] = useState([]);
+
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
+    // console.log("called use effect");
     // fetchData();
   }, []);
 
@@ -25,6 +29,7 @@ const Body = () => {
       restaurantCardInfo.push(e?.card?.card?.info);
     });
 
+    setListOfRestaurant(restaurantCardInfo);
     setFilterDatas(restaurantCardInfo);
   };
 
@@ -35,11 +40,37 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            onChange={(e) => {
+              setSearchText(e.target.value);
+              // setFilterDatas(listOfRestaurant);
+            }}
+          />
+          <button
+            onClick={() => {
+              let filteredData = filterDatas.filter((res) => {
+                // console.log(res.name);
+                // console.log(searchText);
+
+                return res.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase());
+              });
+              // console.log(filteredData);
+              setFilterDatas(filteredData);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
             // console.log(filterData);
-            console.log("filter-btn clicked");
+
             // console.log(filterDatas);
             let filteredData = filterDatas.filter((res) => {
               return res.avgRating > 4;
