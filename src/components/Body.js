@@ -28,15 +28,11 @@ const Body = () => {
     setFilterDatas(restaurantCardInfo);
   };
 
-  if (filterDatas.length === 0) {
-    return (
-      // <div className="loader">
-      //   <BeatLoader color="#36d7b7" />{" "}
-      // </div>
-      <Shimmer />
-    );
-  }
-  return (
+  //conditional rendering
+
+  return filterDatas.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
         <button

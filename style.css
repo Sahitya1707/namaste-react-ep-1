@@ -64,3 +64,7 @@
   margin: 20px;
   background-color: #80808073;
 }
+.login {
+  padding: 0 20px;
+  cursor: pointer;
+}
