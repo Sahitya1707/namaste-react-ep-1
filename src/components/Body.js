@@ -4,7 +4,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 // let filterDatas = resObj;
 const Body = () => {
-  // const [listOfRestaurant, setListOfRestaurant] = useState([]);
+  const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filterDatas, setFilterDatas] = useState([]);
 
   const [searchText, setSearchText] = useState("");
@@ -17,10 +17,10 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/search/v3?lat=28.6105073&lng=77.1145653&str=Best%20Food%20Bank&trackingId=e12a47d4-5716-ea53-3dbe-f8e4fc6b078e&submitAction=ENTER&queryUniqueId=84fa4b8b-4671-714a-3f37-917d6df4ae01"
+      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/search/v3?lat=28.6105073&lng=77.1145653&str=Best%20Food%20Bank&trackingId=e12a47d4-5716-ea53-3dbe-f8e4fc6b078e&submitAction=ENTER&queryUniqueId=84fa4b8b-4671-714a-3f37-917d6df4ae01"
     );
     const json = await data.json();
-
+    console.log(json);
     const restaurantCard =
       json?.data?.cards[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards;
 
@@ -51,7 +51,7 @@ const Body = () => {
           />
           <button
             onClick={() => {
-              let filteredData = filterDatas.filter((res) => {
+              let filteredData = listOfRestaurant.filter((res) => {
                 // console.log(res.name);
                 // console.log(searchText);
 
@@ -59,7 +59,7 @@ const Body = () => {
                   .toLowerCase()
                   .includes(searchText.toLowerCase());
               });
-              // console.log(filteredData);
+              console.log(filteredData);
               setFilterDatas(filteredData);
             }}
           >

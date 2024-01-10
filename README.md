@@ -57,3 +57,7 @@ Two types of export/import
 - during the re rendering cycle react is finding the difference between older virtual dom and newer virtual dom.
 
 - virtual dom is object representation of the real dom.
+
+- Episode 7
+
+  - Routing
