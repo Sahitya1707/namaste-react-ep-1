@@ -23,8 +23,8 @@ const RestaurantCard = (props) => {
         alt="megna-food"
         className="res-logo"
       />
+      <h1>{name}</h1>
       <h3>{cuisines.join(", ")}</h3>
-      <h4>{name}</h4>
       <h4>{costForTwo}</h4>
       <h4>{deliveryTime} Minutes</h4>
       <h4>{avgRating} Rating</h4>

@@ -17,7 +17,7 @@
 - HTTPS
 - Tree Shaking - Remove unused code s
 
-#Food Ordering app layour
+#Food Ordering app layout
 /\*
 
 - Header
@@ -61,3 +61,12 @@ Two types of export/import
 - Episode 7
 
   - Routing
+
+  - While using the react never use the anchor tag. ?? because the whole page got refreshed while using anchor tag. (Import LINK from react-router-dom instead of "href" we have to use "to".)
+
+# Routing in Web Apps
+
+- Client side Routing
+  - All the components are already loaded into our apps in these kind of routing.
+- Server side Routing
+  - It means to make the network call and the page is coming from the server
