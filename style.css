@@ -73,3 +73,6 @@
   /* flex-direction: row-reverse; */
   justify-content: space-between;
 }
+.resmenu-img {
+  width: 4rem;
+}
