@@ -19,19 +19,20 @@ const RestaurantMenu = () => {
 
     // console.log(data);
     const json = await data.json();
-
+    console.log(json.data);
     setResInfo(json.data);
+    console.log(resInfo);
   };
   if (resInfo === null) {
     return <Shimmer />;
   }
   // console.log(resInfo?.cards[0]?.card?.card?.info);
   const { name, cloudinaryImageId, city, costForTwo, cuisines } =
-    resInfo?.cards[0]?.card?.card?.info;
-  const { cards } = resInfo.cards[2].groupedCard.cardGroupMap.REGULAR;
+    resInfo?.cards[2]?.card?.card?.info;
+  // const { cards } = resInfo.cards[2].groupedCard.cardGroupMap.REGULAR;
 
-  console.log(resInfo.cards[2].groupedCard.cardGroupMap.REGULAR);
-  console.log(cards);
+  // console.log(resInfo.cards[2].groupedCard.cardGroupMap.REGULAR);
+  // console.log(cards);
 
   return (
     <div>
@@ -42,7 +43,7 @@ const RestaurantMenu = () => {
         alt="megna-food"
         className="resmenu-img"
       />
-      <h1>{resInfo.cards[0].card.card.info.city}</h1>
+      <h1>{city}</h1>
       <h2>Cusines</h2>
       <ul>
         {cuisines.map((e, i) => {

@@ -70,3 +70,5 @@ Two types of export/import
   - All the components are already loaded into our apps in these kind of routing.
 - Server side Routing
   - It means to make the network call and the page is coming from the server
+
+#class based components are the class which uses render method and return some pieces of jsx.

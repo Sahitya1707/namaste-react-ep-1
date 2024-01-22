@@ -76,4 +76,7 @@
 .resmenu-img {
   width: 4rem;
 }
-/* added to another computer */
+.user-card {
+  padding: 10px;
+  border: 1px solid black;
+}
