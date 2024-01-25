@@ -72,3 +72,5 @@ Two types of export/import
   - It means to make the network call and the page is coming from the server
 
 #class based components are the class which uses render method and return some pieces of jsx.
+
+-- what is class in javaScript ? What is class based component on react?

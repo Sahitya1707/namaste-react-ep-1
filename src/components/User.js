@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 const User = () => {
+  useEffect(() => {
+    //api call
+  }, []);
   return (
     <div className="user-card">
       <h2>Name: Sahitya</h2>
