@@ -16,8 +16,9 @@ class About extends React.Component {
       <div>
         About
         <h1>This is namaste React Webseries</h1>
-        <User />
+        {/* <User /> */}
         <UserClass name={"Sahitya Class"} location={"Nepal"} />
+        <UserClass name={"Elon Musk"} location={"Users"} />
       </div>
     );
   }

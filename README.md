@@ -74,3 +74,23 @@ Two types of export/import
 #class based components are the class which uses render method and return some pieces of jsx.
 
 -- what is class in javaScript ? What is class based component on react?
+
+-- Life Cycle in React (Links redirect you to the image)
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+-- How class component work? (suppose if you have one parent and two child component having all the component did mount)
+
+- Parent constructor is called
+- Parent Render is called
+
+  - First Child Construtor is Called
+  - First Render is Called
+
+  - Second Child Construtor is Called
+  - Second Render is Called
+
+  - Over here DOM gets updated - In Single Batch
+    -First Component did Mount called
+  - Second Component Did Mount called
+
+-Parent Component did mount called
