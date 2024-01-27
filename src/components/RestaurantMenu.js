@@ -1,38 +1,25 @@
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-import axios from "axios";
+
 import { useParams } from "react-router-dom";
-import { MENU_API } from "../utils/constants";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 import { CDN_URL } from "../utils/constants";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
+  // const [resInfo, setResInfo] = useState(null);
   const params = useParams();
-  const { resId } = params;
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-  // console.log(params);
-  const fetchMenu = async () => {
-    const data = await fetch(`${MENU_API}${resId}`);
 
-    // console.log(data);
-    const json = await data.json();
-    console.log(json.data);
-    setResInfo(json.data);
-    console.log(resInfo);
-  };
+  const { resId } = params;
+
+  const resInfo = useRestaurantMenu(resId);
+
   if (resInfo === null) {
     return <Shimmer />;
   }
-  // console.log(resInfo?.cards[0]?.card?.card?.info);
+
   const { name, cloudinaryImageId, city, costForTwo, cuisines } =
     resInfo?.cards[2]?.card?.card?.info;
-  // const { cards } = resInfo.cards[2].groupedCard.cardGroupMap.REGULAR;
-
-  // console.log(resInfo.cards[2].groupedCard.cardGroupMap.REGULAR);
-  // console.log(cards);
 
   return (
     <div>
