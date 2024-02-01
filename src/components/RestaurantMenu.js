@@ -9,7 +9,7 @@ import { CDN_URL } from "../utils/constants";
 const RestaurantMenu = () => {
   // const [resInfo, setResInfo] = useState(null);
   const params = useParams();
-
+  console.log(useParams());
   const { resId } = params;
 
   const resInfo = useRestaurantMenu(resId);

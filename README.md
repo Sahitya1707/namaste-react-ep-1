@@ -1,5 +1,9 @@
 #Namaste React
 
+- Let see How React work under the hood? (Free code camp)
+  -At first, we need to download a bundler such as parcel, vite, or parcel etc....
+-
+
 #parcel
 
 - Dev Build
