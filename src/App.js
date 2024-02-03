@@ -15,7 +15,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 // dynamic bundling
 // loading while scrolling
 //one demand loading
-const Grocery = lazy(() => import("./components/Grocery"));
+const Grocery = lazy(() => import("./components/grocery"));
 const About = lazy(() => import("./components/About"));
 console.log(Grocery);
 const AppLayout = () => {

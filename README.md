@@ -113,3 +113,9 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
   RENDER (API DATA)
   <JSX DATA IS FILLED WITH API DATA>
   COMPONENT DID UPDATE IS CALLED
+
+  -- TAILWIND CSS
+
+  - npm install -D tailwindcss
+
+  -- Suspense and lazy loading in react????
