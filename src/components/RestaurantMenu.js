@@ -9,10 +9,13 @@ import { CDN_URL } from "../utils/constants";
 const RestaurantMenu = () => {
   // const [resInfo, setResInfo] = useState(null);
   const params = useParams();
-  console.log(useParams());
+  // console.log(useParams());
   const { resId } = params;
 
   const resInfo = useRestaurantMenu(resId);
+  console.log(useRestaurantMenu);
+  console.log(resInfo);
+  // console.log(resInfo.card[2].groupedCard.cardGroupMap);
 
   if (resInfo === null) {
     return <Shimmer />;
@@ -22,7 +25,7 @@ const RestaurantMenu = () => {
     resInfo?.cards[2]?.card?.card?.info;
 
   return (
-    <div>
+    <div className="p-8">
       <h1>{name}</h1>
 
       <img

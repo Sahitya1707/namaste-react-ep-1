@@ -17,13 +17,13 @@ const RestaurantCard = (props) => {
   // console.log(resData[0]);
   // console.log(resData.menu[0].name);
   return (
-    <div className="res-card">
+    <div className="w-[20rem] h-[32rem] bg-[#8080805a] rounded px-2 py-2 flex flex-col justify-center ">
       <img
         src={`${CDN_URL}${cloudinaryImageId}`}
         alt="megna-food"
-        className="res-logo"
+        className="rounded h-[17rem]"
       />
-      <h1>{name}</h1>
+      <h1 className="font-bold uppercase">{name}</h1>
       <h3>{cuisines.join(", ")}</h3>
       <h4>{costForTwo}</h4>
       <h4>{deliveryTime} Minutes</h4>

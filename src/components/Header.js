@@ -12,30 +12,30 @@ const Header = () => {
   // if dependency array is [btnName] - update everytime btnName is upadted
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="header">
+    <div className="flex h-[5rem] w-[100vw] justify-between items-center px-[2rem ] bg-[#5b92c5] shadow-lg">
       <div>
-        <img src={`${LOGO_URL}`} alt="" className="logo" />
+        <Link to="/">
+          <img src={`${LOGO_URL}`} alt="" className="h-[rem] w-[7rem]" />
+        </Link>
       </div>
-      <div className="nav-items">
-        <ul>
-          <li className="text-red-500">
-            Online Status: {onlineStatus ? "✅" : "😡"}
-          </li>
-          <li>
+      <div className=" uppercase">
+        <ul className="flex px-2">
+          <li className="px-2">Online Status: {onlineStatus ? "✅" : "😡"}</li>
+          <li className="px-2">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-2">
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className="px-2">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>
+          <li className="px-2">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>Cart</li>
+          <li className="px-2">Cart</li>
           <button
-            className="login"
+            className="uppercase px-2"
             onClick={() => {
               btnName === "Login" ? setbtnName("Logout") : setbtnName("Login");
             }}

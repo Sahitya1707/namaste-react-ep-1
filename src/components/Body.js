@@ -49,10 +49,10 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
-        <div className="search">
+        <div className="m-4 p-4 ">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black rounded mx-2"
             onChange={(e) => {
               setSearchText(e.target.value);
               // setFilterDatas(listOfRestaurant);
@@ -68,15 +68,16 @@ const Body = () => {
                   .toLowerCase()
                   .includes(searchText.toLowerCase());
               });
-              console.log(filteredData);
+
               setFilterDatas(filteredData);
             }}
+            className="border border-black border-solid px-4 rounded uppercase text-[black] bg-[#5b92c5] hover:bg-[white] hover:duration-75"
           >
             Search
           </button>
         </div>
         <button
-          className="filter-btn"
+          className="filter-btn px-2 py-2 bg-[#27ffed] border-solid  border-yellow-200  rounded-md my-2 mx-2"
           onClick={() => {
             // console.log(filterData);
 
@@ -90,7 +91,7 @@ const Body = () => {
           Top Rated Restaurant
         </button>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap gap-6 items-center justify-center">
         {/* {console.log(filterDatas)} */}
         {filterDatas.map((filterData) => {
           return (
