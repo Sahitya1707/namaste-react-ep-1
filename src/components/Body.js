@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
@@ -34,6 +34,8 @@ const Body = () => {
     setListOfRestaurant(restaurantCardInfo);
     setFilterDatas(restaurantCardInfo);
   };
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   //conditional rendering
   const onlineStatus = useOnlineStatus();
@@ -96,13 +98,15 @@ const Body = () => {
         {filterDatas.map((filterData) => {
           return (
             <Link to={`/restaurants/${filterData.id}`} key={filterData.id}>
-              <RestaurantCard resData={filterData} />
+              {/* If the restaurant promoted then add a promoted label to it. */}
+              {filterData.promoted ? (
+                <RestaurantCardPromoted resData={filterData} />
+              ) : (
+                <RestaurantCard resData={filterData} />
+              )}
             </Link>
           );
         })}
-        {/* <RestaurantCard resData={resObj[0]} /> */}
-        {/* <RestaurantCard resData={resObj[1]} />
-        <RestaurantCard resData={resObj[2]} /> */}
       </div>
     </div>
   );
