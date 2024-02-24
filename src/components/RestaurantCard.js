@@ -1,7 +1,8 @@
+// import react, { useContext } from "react";
 import { CDN_URL } from "../utils/constants";
+// import UserContext from "../utils/UserContext";
 const RestaurantCard = (props) => {
-  //Destructing of Object
-  // console.log(props);
+  // const { loggedInUser } = useContext(UserContext);
   const { resData } = props;
   // console.log(resData);
 
@@ -20,6 +21,7 @@ const RestaurantCard = (props) => {
       <h3>{cuisines.join(", ")}</h3>
       <h4>{costForTwo}</h4>
       <h4>{deliveryTime} Minutes</h4>
+      {/* <h4>{loggedInUser} Minutes</h4> */}
       <h4>{avgRating} Rating</h4>
     </div>
   );

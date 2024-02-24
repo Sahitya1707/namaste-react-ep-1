@@ -1,15 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 import Shimmer from "./Shimmer";
+
 // let filterDatas = resObj;
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filterDatas, setFilterDatas] = useState([]);
 
   const [searchText, setSearchText] = useState("");
+
+  const { setUserName, loggedInUser, userName } = useContext(UserContext);
+  console.log(userName);
+  // console.log(loggedInUser);
 
   useEffect(() => {
     fetchData();
@@ -51,32 +57,46 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
-        <div className="m-4 p-4 ">
-          <input
-            type="text"
-            className="border border-solid border-black rounded mx-2"
-            onChange={(e) => {
-              setSearchText(e.target.value);
-              // setFilterDatas(listOfRestaurant);
-            }}
-          />
-          <button
-            onClick={() => {
-              let filteredData = listOfRestaurant.filter((res) => {
-                // console.log(res.name);
-                // console.log(searchText);
+        <div className="flex">
+          <div className="m-4 p-4 ">
+            <input
+              type="text"
+              className="border border-solid border-black rounded mx-2"
+              onChange={(e) => {
+                setSearchText(e.target.value);
+                // setFilterDatas(listOfRestaurant);
+              }}
+            />
+            <button
+              onClick={() => {
+                let filteredData = listOfRestaurant.filter((res) => {
+                  // console.log(res.name);
+                  // console.log(searchText);
 
-                return res.name
-                  .toLowerCase()
-                  .includes(searchText.toLowerCase());
-              });
+                  return res.name
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase());
+                });
 
-              setFilterDatas(filteredData);
-            }}
-            className="border border-black border-solid px-4 rounded uppercase text-[black] bg-[#5b92c5] hover:bg-[white] hover:duration-75"
-          >
-            Search
-          </button>
+                setFilterDatas(filteredData);
+              }}
+              className="border border-black border-solid px-4 rounded uppercase text-[black] bg-[#5b92c5] hover:bg-[white] hover:duration-75"
+            >
+              Search
+            </button>
+          </div>
+
+          <div className="m-4 p-4 ">
+            <label className="border   px-4 rounded uppercase text-[black]  ">
+              User Name
+            </label>
+            <input
+              type="text"
+              value={loggedInUser}
+              className="border border-solid border-black rounded mx-2"
+              onChange={(e) => setUserName(e.target.value)}
+            />
+          </div>
         </div>
         <button
           className="filter-btn px-2 py-2 bg-[#27ffed] border-solid  border-yellow-200  rounded-md my-2 mx-2"

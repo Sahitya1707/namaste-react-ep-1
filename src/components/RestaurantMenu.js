@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import UserContext from "../utils/UserContext";
 import Shimmer from "./Shimmer";
 
 import { useParams } from "react-router-dom";
@@ -9,6 +10,8 @@ import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const [showItem, setShowItem] = useState(true);
+  console.log(useContext(UserContext));
+  const { loggedInUser } = useContext(UserContext);
   // const [eachShowItem, setEachShowItem] = useState(false);
   const params = useParams();
 
@@ -20,6 +23,8 @@ const RestaurantMenu = () => {
 
   const { name, cloudinaryImageId, city, costForTwo, cuisines } =
     resInfo?.cards[2]?.card?.card?.info || {};
+
+  const dummy = "dummy Data";
 
   // select only the cards with the @type of itemCategory
   const categories =
@@ -55,7 +60,7 @@ const RestaurantMenu = () => {
       </ul>
 
       <p>{costForTwo / 100} for two</p>
-
+      <span>{loggedInUser}</span>
       {categories &&
         categories.map((category, i) => {
           console.log(showItem);
