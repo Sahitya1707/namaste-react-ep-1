@@ -1,12 +1,15 @@
 import ItemList from "./ItemList";
 import { useState } from "react";
 
-const RestaurantCategory = ({ data }) => {
-  const [showItem, setShowItem] = useState(false);
+const RestaurantCategory = ({ data, showItem, setShowIndex, setShowItem }) => {
+  const [individualState, setIndividualState] = useState(false);
   //   console.log(data.itemCards);
-  const handleClick = (e) => {
-    setShowItem(!showItem);
+  const handleClick = () => {
+    setShowItem();
+
+    setShowIndex();
   };
+
   return (
     <div className="w-6/12 bg-gray-200 shadow-lg p-4 mx-auto my-4  ">
       <div
@@ -18,7 +21,7 @@ const RestaurantCategory = ({ data }) => {
         </span>
         {showItem ? <span>⬆️</span> : <span>⬇️</span>}
       </div>
-      {showItem ? <ItemList items={data?.itemCards} /> : <></>}
+      {showItem && <ItemList items={data?.itemCards} />}
     </div>
   );
 };

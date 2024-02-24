@@ -8,29 +8,18 @@ import { CDN_URL } from "../utils/constants";
 import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
-  // const [resInfo, setResInfo] = useState(null);
+  const [showItem, setShowItem] = useState(true);
+  // const [eachShowItem, setEachShowItem] = useState(false);
   const params = useParams();
-  // console.log(useParams());
+
   const { resId } = params;
-  // console.log(resId);
 
   const resInfo = useRestaurantMenu(resId);
-  // console.log(useRestaurantMenu);
-  // console.log(resInfo.cards[5]?.groupedCard?.cardGroupMap?.REGULAR);
-  // console.log(resInfo.cards[5]);
-  // console.log(resInfo[2].groupedCard.cardGroupMap);
-  // console.log(resInfo);
+
+  const [showIndex, setShowIndex] = useState(null);
 
   const { name, cloudinaryImageId, city, costForTwo, cuisines } =
     resInfo?.cards[2]?.card?.card?.info || {};
-
-  // filter all the items with the type filter of catergories
-  // console.log(
-  //   resInfo.cards[5]?.groupedCard?.cardGroupMap?.REGULAR.cards.filter((e) => {
-  //     return e.card.card?.["@type"] = 'hi';
-  //   })
-  // );
-  // console.log(resInfo.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
 
   // select only the cards with the @type of itemCategory
   const categories =
@@ -69,7 +58,22 @@ const RestaurantMenu = () => {
 
       {categories &&
         categories.map((category, i) => {
-          return <RestaurantCategory key={i} data={category?.card?.card} />;
+          console.log(showItem);
+          return (
+            <RestaurantCategory
+              key={i}
+              data={category?.card?.card}
+              showItem={i === showIndex && showItem}
+              setShowIndex={() => {
+                setShowIndex(i);
+                // setShowIndex(true);
+                // setShowItem(!showItem);
+              }}
+              setShowItem={() => {
+                setShowItem(!showItem);
+              }}
+            />
+          );
         })}
     </div>
   );
