@@ -121,3 +121,12 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
   -- Suspense and lazy loading in react????
 
 --React Context and Props drilling
+
+# Redux ToolKit
+
+- Install @reduxjs/toolkit and react-redux
+  - How Redux works?
+    When you click on button, it dispatches the action and calls a reducer function and that function modifies the slice of the redux store that you created.
+    And to read the data we use selector, this phenomena is also known as subscribing to the stores.
+  - while using the redux subscribe to the right selector. it should be subscribed to the specific level as subscribing to the parent level will hamper the performance. suppose if you have any changes in parent component whole items will be changes so only subscribe to the specific items.
+  - Redux uses IMMER JS behind the scene

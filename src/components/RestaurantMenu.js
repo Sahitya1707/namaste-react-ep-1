@@ -10,7 +10,7 @@ import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const [showItem, setShowItem] = useState(true);
-  console.log(useContext(UserContext));
+
   const { loggedInUser } = useContext(UserContext);
   // const [eachShowItem, setEachShowItem] = useState(false);
   const params = useParams();
@@ -18,9 +18,10 @@ const RestaurantMenu = () => {
   const { resId } = params;
 
   const resInfo = useRestaurantMenu(resId);
+  console.log(resInfo);
 
   const [showIndex, setShowIndex] = useState(null);
-
+  console.log(resInfo);
   const { name, cloudinaryImageId, city, costForTwo, cuisines } =
     resInfo?.cards[2]?.card?.card?.info || {};
 
@@ -37,7 +38,6 @@ const RestaurantMenu = () => {
     });
 
   if (resInfo === null) {
-    console.log("shimmer");
     return <Shimmer />;
   }
   return (
