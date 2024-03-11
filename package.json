@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "This is episdoe 1/2 of namaste react",
   "scripts": {
-    "test": "jest",
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,13 @@
   },
   "homepage": "https://github.com/Sahitya1707/namaste-react-ep-1#readme",
   "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "@testing-library/react": "^14.2.1",
+    "babel-jest": "^29.7.0",
     "buffer": "^6.0.3",
+    "jest": "^21.2.1",
+    "jest-environment-jsdom": "^29.7.0",
     "parcel": "^2.10.3",
     "postcss": "^8.4.33",
     "process": "^0.11.10",

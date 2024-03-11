@@ -1,10 +1,10 @@
-#Namaste React
+# Namaste React
 
 - Let see How React work under the hood? (Free code camp)
   -At first, we need to download a bundler such as parcel, vite, or parcel etc....
 -
 
-#parcel
+# parcel
 
 - Dev Build
 - Local Server
@@ -21,7 +21,8 @@
 - HTTPS
 - Tree Shaking - Remove unused code s
 
-#Food Ordering app layout
+# Food Ordering app layout
+
 /\*
 
 - Header
@@ -45,12 +46,13 @@
 
 \*/
 
-Two types of export/import
+# Two types of export/import
 
 - Default (export default <component name>)
 - Named Export Import (export const Component)
 
-#React hook
+# React hook
+
 (Normal JS uitility function)
 
 - useState() - Superpowerful state variable in react
@@ -75,14 +77,14 @@ Two types of export/import
 - Server side Routing
   - It means to make the network call and the page is coming from the server
 
-#class based components are the class which uses render method and return some pieces of jsx.
+# class based components are the class which uses render method and return some pieces of jsx.
 
--- what is class in javaScript ? What is class based component on react?
+- what is class in javaScript ? What is class based component on react?
 
--- Life Cycle in React (Links redirect you to the image)
-https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+- Life Cycle in React (Links redirect you to the image)
+  https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
--- How class component work? (suppose if you have one parent and two child component having all the component did mount)
+- How class component work? (suppose if you have one parent and two child component having all the component did mount)
 
 - Parent constructor is called
 - Parent Render is called
@@ -109,18 +111,18 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
   <API IS CALLED>
   THIS.SETSTATE -> STATE VARIABLE IS UPDATED
 
-  -- UPDATE
-  RENDER (API DATA)
-  <JSX DATA IS FILLED WITH API DATA>
-  COMPONENT DID UPDATE IS CALLED
+  - UPDATE
+    RENDER (API DATA)
+    <JSX DATA IS FILLED WITH API DATA>
+    COMPONENT DID UPDATE IS CALLED
 
-  -- TAILWIND CSS
+  - TAILWIND CSS
 
   - npm install -D tailwindcss
 
-  -- Suspense and lazy loading in react????
+  - Suspense and lazy loading in react????
 
---React Context and Props drilling
+-React Context and Props drilling
 
 # Redux ToolKit
 
@@ -130,3 +132,20 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
     And to read the data we use selector, this phenomena is also known as subscribing to the stores.
   - while using the redux subscribe to the right selector. it should be subscribed to the specific level as subscribing to the parent level will hamper the performance. suppose if you have any changes in parent component whole items will be changes so only subscribe to the specific items.
   - Redux uses IMMER JS behind the scene
+  - What is RTK Query?
+
+# Types of testing for developer
+
+- Unit testing
+- Integration Testing
+- End to End testing also known as e2e testing.
+
+# Setting up testing in our app
+
+- Install React testing library.
+- Installed Jest.
+- Installed Babel dependencies.
+- Configure Babel.
+- Configure Parcel Config file to disable default babel transpilation.
+- Jest (npm init jest@latest)
+- Install jsdom library

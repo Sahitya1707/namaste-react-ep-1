@@ -52,11 +52,12 @@ const RestaurantMenu = () => {
       <h1 className="font-bold">{city}</h1>
       <ul>
         <h2 className="font-semibold">Cusines:</h2>
-        {cuisines.map((e, i) => {
-          //   console.log(e);
-          //   console.log("momo");
-          return <li key={i}>{e}</li>;
-        })}
+        {cuisines &&
+          cuisines.map((e, i) => {
+            //   console.log(e);
+            //   console.log("momo");
+            return <li key={i}>{e}</li>;
+          })}
       </ul>
 
       <p>{costForTwo / 100} for two</p>
