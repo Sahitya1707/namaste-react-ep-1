@@ -143,7 +143,7 @@
 # Setting up testing in our app
 
 - Install React testing library.
-- Installed Jest.
+- Install Jest.
 - Installed Babel dependencies.
 - Configure Babel.
 - Configure Parcel Config file to disable default babel transpilation.
