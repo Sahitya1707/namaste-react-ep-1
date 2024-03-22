@@ -152,3 +152,5 @@
 - Install @testing-library/jest-dom - to make JSX work in test cases
 - Include @babel/preset-react inside babel config
 - Install @testing-library/jest-dom
+
+(2:34 removing)

@@ -7,5 +7,5 @@ test("Should Load contact us component", () => {
   const heading = screen.getByRole("heading");
 
   //   assertion
-  expect(heading);
+  expect(heading).toBeInTheDocument();
 });
